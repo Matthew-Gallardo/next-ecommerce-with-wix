@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MEXT-WIX E-Commerce Application",
+  title: "NEXT-WIX E-Commerce Application",
   description: "A complete e-commerce application with Next.js and Wix",
 };
 
@@ -16,7 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      
+      <body className={inter.className}>
+        <NavBar/>
+        {children}
+        <Footer/>
+      </body>
+      
     </html>
   );
 }
