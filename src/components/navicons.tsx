@@ -15,7 +15,6 @@ const NavIcon = () => {
   const handleProfile = () => {
     if (!isLoggeddIn) {
       router.push("/login");
-      
     } else {
       setProfileOpen((prev) => !prev);
     }
@@ -39,19 +38,20 @@ const NavIcon = () => {
       )}
       <Image src="/notification.png" alt="Notification" width={22} height={22} className="cursor-pointer"/>
       <div className="relative cursor-pointer " onClick={() =>setCartOpen((prev) => !prev) }>
-      <Image 
-      src="/cart.png" 
-      alt="" 
-      width={22} 
-      height={22} 
-      className="cursor-pointer"
-      
-      />
-      <div className="absolute -top-4 -right-4 w-6 h-6 bg-theme rounded-full text-white text-sm flex items-center justify-center">2</div>
-       {isCartOpen && (
+        <div className="relative">
+          <Image 
+            src="/cart.png" 
+            alt="Cart" 
+            width={100} 
+            height={100} 
+            className="cursor-pointer"
+          />
+          <div className="absolute -top-4 -right-4 w-6 h-6 bg-theme rounded-full text-white text-sm flex items-center justify-center">2</div>
+        </div>
+      </div>
+      {isCartOpen && (
          <CartModal/>
       )}
-      </div>
     </div>
   )
 }
